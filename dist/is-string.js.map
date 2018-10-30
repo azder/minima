@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/is-string.js"],"names":["string"],"mappings":"AAAA;AAGA,gBAEIA,MAAM,IAAI,SAASA,MAAT,IAAmB,KAAK,CAAL,KAAWA,MAA9B,IAAyC,GAAEA,MAAO,EAAV,KAAgBA,MAFtE","sourcesContent":["/** Created by azder on 2018-10-29. */\n\n\nexport default (\n\n    string => null !== string && void 0 !== string && `${string}` === string\n\n);\n"],"file":"is-string.js"}

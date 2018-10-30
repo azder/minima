@@ -1,0 +1,18 @@
+{
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2017
+    },
+    "env": {
+        "browser": false,
+        "node": false,
+        "jest": false
+    },
+    "extends": "@azhder/azder",
+    "globals": {
+        "Promise": false,
+        "Symbol": false
+    },
+    "rules": {
+    }
+}
