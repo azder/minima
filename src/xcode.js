@@ -1,5 +1,8 @@
 import ecode from './ecode';
+import isstr from './is/string';
 
+
+const MINIMA_ERROR = 128;
 
 const SUCCESS = 0;
 const ERROR = 1;
@@ -9,11 +12,11 @@ export default (
 
     ec => {
 
-        if (!ec) {
-            return ERROR;
+        if (!isstr(ec)) {
+            return MINIMA_ERROR;
         }
 
-        if (ec.startsWith(ecode.k[ecode.ANY])) {
+        if (ec.startsWith(ecode.ok)) {
             return SUCCESS;
         }
 

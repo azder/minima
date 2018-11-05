@@ -1,11 +1,12 @@
 /** Created by azder on 2018-10-25. */
 
-import xt$ from './xt.$';
-import of$ from './of.$';
+import xt$ from './util/xt.$';
+import of$ from './util/of.$';
 
 
 const ROOT = 'e';
 const ANY = '_';
+const DEFAULT = '';
 
 const good = of$(`${ROOT}.success`);
 const clie = of$(`${ROOT}.client`);
@@ -17,51 +18,55 @@ const data = of$(serv('data'));
 
 
 const k = xt$(good, {
-    [ANY]:   good(),
+    [ANY]:   good(DEFAULT),
     created: good('created'),
+    found:   good('found'),
 });
 
 const v = xt$(vali, {
-    [ANY]: vali(),
+    [ANY]: vali(DEFAULT),
 });
 
 const m = xt$(sema, {
-    [ANY]:   sema(),
+    [ANY]:   sema(DEFAULT),
     invalid: v,
 });
 
 const c = xt$(clie, {
-    [ANY]:    clie(),
-    semantic: m,
+    [ANY]:        clie(DEFAULT),
+    unauthorized: clie('unauthorized'),
+    forbidden:    clie('forbidden'),
+    notFound:     clie('not-found'),
+    semantic:     m,
 });
 
 const d = xt$(data, {
-    [ANY]: data(),
+    [ANY]: data(DEFAULT),
 });
 
 const s = xt$(serv, {
-    [ANY]:          serv(),
-    database:       data(),
+    [ANY]:          serv(DEFAULT),
     notImplemented: serv('not-implemented'),
+    database:       data(),
 });
 
 
 // noinspection JSUnusedGlobalSymbols
 export default ({
 
-    ok: k(),
+    ok: k(''),
 
-    client:   c(),
-    semantic: m(),
-    invalid:  v(),
+    client:   c(''),
+    semantic: m(''),
+    invalid:  v(''),
 
-    server:   s(),
-    database: d(),
+    server:   s(''),
+    database: d(''),
 
     a: of$.all,
 
     k, c, v, m, s, d,
 
-    ROOT, ANY,
+    ROOT, ANY, DEFAULT,
 
 });

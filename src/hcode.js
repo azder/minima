@@ -1,12 +1,17 @@
 import ecode from './ecode';
+import isstr from './is/string';
 
-const ANY_K = ecode.k[ecode.ANY];
-const ANY_C = ecode.c[ecode.ANY];
-const ANY_M = ecode.m[ecode.ANY];
-const ANY_V = ecode.v[ecode.ANY];
-const ANY_S = ecode.s[ecode.ANY];
-const ANY_D = ecode.d[ecode.ANY];
+const {ANY} = ecode;
 
+const ANY_K = ecode.k[ANY];
+const ANY_C = ecode.c[ANY];
+const ANY_M = ecode.m[ANY];
+const ANY_V = ecode.v[ANY];
+const ANY_S = ecode.s[ANY];
+const ANY_D = ecode.d[ANY];
+
+
+const MINIMA_ERROR = 599;
 
 const GOOD = 200;
 const CLIE = 400;
@@ -23,6 +28,9 @@ const MAP = Object.freeze({
     [ANY_D]: SERV,
 
     [ecode.k.created]:        201,
+    [ecode.c.unauthorized]:   401,
+    [ecode.c.forbidden]:      403,
+    [ecode.c.notFound]:       404,
     [ecode.s.notImplemented]: 501,
 
 });
@@ -33,8 +41,8 @@ export default (
 
     ec => {
 
-        if (!ec) {
-            return SERV;
+        if (!isstr(ec)) {
+            return MINIMA_ERROR;
         }
 
         if (MAP[ec]) {

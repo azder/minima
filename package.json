@@ -6,7 +6,8 @@
   "scripts": {
     "build": "babel src -d dist --source-maps",
     "dev": "babel src -d dist --watch",
-    "test": "jest"
+    "test": "jest",
+    "one": "nodemon --exec babel-node $1"
   },
   "author": "azder",
   "license": "MIT",
@@ -21,5 +22,8 @@
     "eslint": "^5.7.0",
     "jest": "^23.6.0",
     "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "ramda": "^0.25.0"
   }
 }

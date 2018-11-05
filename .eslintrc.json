@@ -11,7 +11,8 @@
     "extends": "@azhder/azder",
     "globals": {
         "Promise": false,
-        "Symbol": false
+        "Symbol": false,
+        "Set": false
     },
     "rules": {
     }
