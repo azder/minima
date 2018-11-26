@@ -8,9 +8,6 @@ import of$ from '../util/of.$';
 
 export default (
 
-    what => codes$(
-        of$(ecode.s.notImplemented, what),
-        o()
-    )
+    what => codes$(of$(ecode.s.notImplemented, what), o())
 
 );

@@ -17,6 +17,7 @@ const GOOD = 200;
 const CLIE = 400;
 const SEMA = 422;
 const SERV = 500;
+const SERV_NOT_IMPLEMENTED = 501;
 
 const MAP = Object.freeze({
 
@@ -31,7 +32,7 @@ const MAP = Object.freeze({
     [ecode.c.unauthorized]:   401,
     [ecode.c.forbidden]:      403,
     [ecode.c.notFound]:       404,
-    [ecode.s.notImplemented]: 501,
+    // [ecode.s.notImplemented]: SERV_NOT_IMPLEMENTED,
 
 });
 
@@ -59,6 +60,10 @@ export default (
 
         if (ec.startsWith(ANY_C)) {
             return CLIE;
+        }
+
+        if (ec.startsWith(ecode.s.notImplemented)) {
+            return SERV_NOT_IMPLEMENTED;
         }
 
         return SERV;

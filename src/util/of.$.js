@@ -2,6 +2,7 @@
 
 import curry from './curry';
 import of from './of';
+import sort from './sort';
 
 
 const ALL = Symbol('of$.ALL');
@@ -17,7 +18,10 @@ const of$ = curry(
     }
 );
 
+
+const longer = (a, b) => b.length - a.length;
+
 of$[ALL] = new Set();
-of$.all = () => [...of$[ALL]].sort();
+of$.all = () => sort(longer, of$[ALL]);
 
 export default of$;
