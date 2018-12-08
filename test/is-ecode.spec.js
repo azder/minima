@@ -1,4 +1,4 @@
-import isEcode from '../src/is-ecode';
+import isEcode from '../src/is/ecode';
 import ecode from '../src/ecode';
 
 describe('isEcode', () => {

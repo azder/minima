@@ -5,7 +5,7 @@
     },
     "env": {
         "browser": false,
-        "node": false,
+        "node": true,
         "jest": false
     },
     "extends": "@azhder/azder",
