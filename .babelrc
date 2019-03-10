@@ -10,5 +10,14 @@
                 "modules": "umd"
             }
         ]
+    ],
+
+    "plugins": [
+        [
+            "add-module-exports",
+            {
+                "addDefaultProperty": false
+            }
+        ]
     ]
 }

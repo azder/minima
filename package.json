@@ -2,7 +2,7 @@
   "name": "@azhder/minima",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/minima.js",
   "scripts": {
     "build": "babel src -d dist --source-maps",
     "dev": "babel src -d dist --watch",
@@ -21,8 +21,8 @@
     "babel-jest": "^24.3.1",
     "eslint": "^5.15.1",
     "jest": "^24.3.1",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "babel-plugin-add-module-exports": "^1.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
