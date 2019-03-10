@@ -13,7 +13,7 @@ export default (
     data => compose(
         data$(data),
         Array.isArray(data) ? count$(data) : identity,
-        codes$(ecode.k.found)
+        codes$(ecode.ok)
     )(o())
 
 );

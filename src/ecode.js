@@ -6,21 +6,30 @@ import of$ from './util/of.$';
 
 const ROOT = 'e';
 const ANY = '_';
-const DEFAULT = '';
+const EMPTY = '';
+const DEFAULT = EMPTY;
 
-const good = of$(`${ROOT}.success`);
-const clie = of$(`${ROOT}.client`);
-const serv = of$(`${ROOT}.server`);
+const okay = of$(`${ROOT}.ok`);
+const goto = of$(`${ROOT}.go`);
+const clie = of$(`${ROOT}.cl`);
+const serv = of$(`${ROOT}.sv`);
 
 const sema = of$(clie('semantic'));
 const vali = of$(sema('invalid'));
 const data = of$(serv('data'));
 
 
-const k = xt$(good, {
-    [ANY]:   good(DEFAULT),
-    created: good('created'),
-    found:   good('found'),
+const k = xt$(okay, {
+    [ANY]:   okay(DEFAULT),
+    created: okay('created'),
+});
+
+
+const g = xt$(goto, {
+    [ANY]: goto(DEFAULT),
+    found: goto('found'),
+    tempo: goto('tempo'),
+    perma: goto('perma'),
 });
 
 const v = xt$(vali, {
@@ -54,18 +63,20 @@ const s = xt$(serv, {
 // noinspection JSUnusedGlobalSymbols
 export default ({
 
-    ok: k(''),
+    ok: k(EMPTY),
 
-    client:   c(''),
-    semantic: m(''),
-    invalid:  v(''),
+    goto: g(EMPTY),
 
-    server:   s(''),
-    database: d(''),
+    client:   c(EMPTY),
+    semantic: m(EMPTY),
+    invalid:  v(EMPTY),
+
+    server:   s(EMPTY),
+    database: d(EMPTY),
 
     a: of$.all,
 
-    k, c, v, m, s, d,
+    k, g, c, v, m, s, d,
 
     ROOT, ANY, DEFAULT,
 
