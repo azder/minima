@@ -4,8 +4,9 @@ import isString from './string';
 
 import ec from '../ecode';
 
-const root = `${ec.ROOT}`;
-const regx = new RegExp(`^${root}\\..*[^.]$`);
+export const PATTERN = `^${ec.ROOT}\\.[-a-z.]*[^.*]$`;
+
+const regx = new RegExp(PATTERN);
 
 
 export default (
