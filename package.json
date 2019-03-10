@@ -6,24 +6,23 @@
   "scripts": {
     "build": "babel src -d dist --source-maps",
     "dev": "babel src -d dist --watch",
-    "test": "jest",
-    "one": "nodemon --exec babel-node $1"
+    "one": "nodemon --exec babel-node $1",
+    "west": "jest --watch",
+    "test": "jest"
   },
   "author": "azder",
   "license": "MIT",
   "devDependencies": {
     "@azhder/eslint-config-azder": "0.0.7",
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.6",
-    "@babel/node": "^7.0.0",
-    "@babel/preset-env": "^7.1.6",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.6.0",
-    "eslint": "^5.9.0",
-    "jest": "^23.6.0",
-    "nodemon": "^1.18.7"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "babel-jest": "^24.3.1",
+    "eslint": "^5.15.1",
+    "jest": "^24.3.1",
+    "nodemon": "^1.18.10"
   },
   "dependencies": {
-    "ramda": "^0.25.0"
   }
 }
